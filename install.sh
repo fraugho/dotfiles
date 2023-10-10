@@ -102,5 +102,40 @@ sudo systemctl enable --now supergfxd
 echo "Installing ROG Control Center..."
 sudo pacman -S rog-control-center
 
-echo "Installation complete!"
+# Create the script
+echo "Creating the autoupdate script..."
+
+# Use a Here Document to generate the script file
+cat > ~/paru-autoupdate.sh <<EOF
+#!/bin/bash
+
+# Update the system using paru
+paru -Syu --noconfirm
+
+# Optional: Clean up old versions of installed packages to save space
+paru -Scc --noconfirm
+EOF
+
+# Make the script executable
+chmod +x ~/paru-autoupdate.sh
+
+# Set up cronie if not already installed
+if ! command -v cronie &> /dev/null; then
+    echo "Installing cronie..."
+    sudo pacman -S cronie
+
+    # Start and enable the cronie service
+    echo "Starting and enabling cronie service..."
+    sudo systemctl start cronie
+    sudo systemctl enable cronie
+fi
+
+# Add a cron job to run the script
+echo "Setting up the cron job..."
+
+# Open the crontab editor and add the job
+(crontab -l 2>/dev/null; echo "0 2 * * * /home/$USER/paru-autoupdate.sh") | crontab -
+
+echo "Setup complete!"
+
 
