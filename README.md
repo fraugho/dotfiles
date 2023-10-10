@@ -12,16 +12,10 @@ paru -Syyu gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-stu
 git https://github.com/vinceliuice/Graphite-gtk-theme
 ```
 ```
-cd Graphite-gtk-theme/
+cd Graphite-gtk-theme/ | ./install.sh --gdm --tweaks black
 ```
 ```
-./install.sh --gdm --tweaks black
-```
-```
-cd other/grub2
-```
-```
-./install.sh
+cd other/grub2 | ./install.sh
 ```
 
 # Icons
@@ -30,8 +24,29 @@ cd other/grub2
 git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git
 ```
 ```
-cd WhiteSur-icon-theme
+cd WhiteSur-icon-theme | ./install.sh --theme grey --alternative
+```
+
+# Snapshots
+
+```
+sudo snapper -c root create-config /
 ```
 ```
-./install.sh --theme grey --alternative
+sudo systemctl enable snapper-timeline.timer snapper-cleanup.timer | sudo systemctl start snapper-timeline.timer snapper-cleanup.timer
+```
+
+# Dmenu Patch
+
+```
+mkdir /.dmenu | cd ~/.dmenu | paru -G dmenu
+```
+```
+cd dmenu | wget http://tools.suckless.org/dmenu/patches/line-height/dmenu-lineheight-5.2.diff  | makepkg -o
+```
+```
+cd src/dmenu-5.2 | patch -p1 < ~/.dmenu/dmenu/dmenu-lineheight-5.2.diff
+```
+```
+sudo make clean install
 ```
