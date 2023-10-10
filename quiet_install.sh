@@ -57,8 +57,8 @@ makepkg -o
 cd src/dmenu-5.2
 patch -p1 < ~/.dmenu/dmenu/dmenu-lineheight-5.2.diff
 sudo make clean install
-cd ../../..
-rm -rf dmenu
+cd
+rm -rf ~/.dmenu
 
 # Doom Emacs
 echo "Installing Doom Emacs..."
@@ -74,6 +74,20 @@ sudo systemctl enable bluetooth
 echo "Installing Steam flatpak..."
 flatpak install -y flathub com.valvesoftware.Steam
 sudo ln -s /var/lib/flatpak/exports/bin/com.valvesoftware.Steam /usr/bin/steam-flatpak
+
+# Add configuration to alsa-base.conf
+echo "Configuring alsa-base.conf..."
+echo "options snd-hda-intel model=asus-zenbook" | sudo tee -a /etc/modprobe.d/alsa-base.conf
+echo "Configuration for alsa-base.conf complete!"
+
+echo "Copying configuration files..."
+cp -r ~/dotfiles/i3 ~/.config/
+cp -r ~/dotfiles/polybar ~/.config/
+cp -r ~/dotfiles/neofetch ~/.config/
+cp -r ~/dotfiles/qtile ~/.config/
+cp -r ~/dotfiles/Wallpapers ~/
+sudo cp -r ~/dotfiles/dunst /etc/dunst
+sudo cp ~/dotfiles/obquit/obquit.conf /etc/obquit.conf
 
 # Add g14 repo sign key
 echo "Adding g14 repo sign key..."
@@ -142,19 +156,6 @@ echo "Setting up the cron job..."
 # Open the crontab editor and add the job
 (crontab -l 2>/dev/null; echo "0 2 * * * /home/$USER/paru-autoupdate.sh") | crontab -
 
-# Add configuration to alsa-base.conf
-echo "Configuring alsa-base.conf..."
-echo "options snd-hda-intel model=asus-zenbook" | sudo tee -a /etc/modprobe.d/alsa-base.conf
-echo "Configuration for alsa-base.conf complete!"
-
-echo "Copying configuration files..."
-cp -r ~/dotfiles/i3 ~/.config/
-cp -r ~/dotfiles/polybar ~/.config/
-cp -r ~/dotfiles/neofetch ~/.config/
-cp -r ~/dotfiles/qtile ~/.config/
-cp -r ~/dotfiles/Wallpapers ~/
-sudo cp -r ~/dotfiles/dunst /etc/dunst
-sudo cp ~/dotfiles/obquit/obquit.conf /etc/obquit.conf
 
 
 echo "Configuration complete!"
