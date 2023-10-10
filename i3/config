@@ -122,15 +122,6 @@ bindsym $mod+shift+n exec --no-startup-id networkmanager_dmenu -i -nb '#000000' 
 # start rofi
 bindsym $mod+d exec --no-startup-id ~/.config/i3/launcher/launcher.sh
 
-# start xfce4-appfinder
-bindsym mod1+F2 exec --no-startup-id xfce4-appfinder --collapsed
-
-# start xfce-appfinder
-bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
-
-# start xlunch app launcher
-# bindsym mod1+F5 exec --no-startup-id xlunch --config ~/.config/xlunch/default.conf --input ~/.config/xlunch/entries.dsv
-
 # start rofi full
 bindsym $mod+F11 exec --no-startup-id "rofi -font 'Noto Sans 13' -theme-str 'window {width: 100%;height: 100%;}' -show drun"
 
@@ -265,35 +256,6 @@ bindsym $mod+Mod1+Ctrl+Up resize grow height 1 px or 1 ppt
 bindsym $mod+Mod1+Ctrl+Down resize shrink height 1 px or 1 ppt
 bindsym $mod+Mod1+Ctrl+Left resize grow width 1 px or 1 ppt
 
-# old resize keybindings
-# resize window (you can also use the mouse for that)
-
-# bindsym $mod+r mode "resize"
-
-# mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
- #      bindsym $left       resize shrink width 10 px or 10 ppt
- #      bindsym $down       resize grow height 10 px or 10 ppt
- #      bindsym $up         resize shrink height 10 px or 10 ppt
- #      bindsym $right      resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
- #      bindsym Left        resize shrink width 10 px or 10 ppt
- #      bindsym Down        resize grow height 10 px or 10 ppt
- #      bindsym Up          resize shrink height 10 px or 10 ppt
- #      bindsym Right       resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
- #      bindsym Return mode "default"
- #      bindsym Escape mode "default"
-# }
-
-################# choose the font                  
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -330,7 +292,6 @@ exec --no-startup-id nm-applet
 
 # num lock activated
 exec_always --no-startup-id numlockx on
-
 
 # insync
 # exec --no-startup-id insync start
@@ -581,68 +542,6 @@ exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
 
 bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 
-################# bar appearance                   
-
-#bar {
-#    height 20
-#    workspace_buttons yes
-#	font pango:Noto Sans 12
-#    position top
-
-	# system icons
-    # tray_output none
-    # tray_output $firstMonitor
-    # tray_output $secondMonitor
-
-    # OPTION 1 : i3status
-
-    # type status_command i3status without the config file and
-    # you will get the standard i3status bar
-    # Second one is the standard statusbar with my personal settings
-
-	# status_command i3status
-#    status_command i3status -c ~/.config/i3/i3status.conf
-
-    # OPTION 2 : i3blocks
-
-    # https://github.com/vivien/i3blocks
-    # another way to provide text in the statusbar
-    # put hastag in front if not installed
-
-    # status_command i3blocks
-    # status_command i3blocks -c ~/.config/i3/i3blocks.conf
-    # status_command i3blocks -c ~/.config/i3/i3blocks-rainbow.conf
-    # status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
-    # status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
-
-    # OPTION 4 : polybar
-
-    # polybar is launched elsewhere - search for the word
-    # from the opening of the "bar {...}" till the end has to go or hashtagged out
-    # in order for the system trayicons to show up in polybar
-
-    ##START THEMING BAR
-    # Theme name : ArcoLinux Default
-
-    # i3 bar colors
-    # variable border background Text
-
-#    colors {
-#        background #000000
-#        statusline #eeeeee
-#        separator  #666666
-
-        # colorclass           border  backgr. text
-#        focused_workspace     #a9a9a9 #5f676a #eeeeee
-#        active_workspace      #a9a9a9 #5f676a #eeeeee
-#        inactive_workspace    #a9a9a9 #222222 #a9a9a9
-#        urgent_workspace      #a9a9a9 #d42121 #FFFFFF
-#        }
-#
-#    }
-    ##STOP THEMING BAR
-
-    ##START THEMING WM
 
     # Window color settings
     # class                 border  backgr. text    indicator
