@@ -136,6 +136,12 @@ echo "Setting up the cron job..."
 # Open the crontab editor and add the job
 (crontab -l 2>/dev/null; echo "0 2 * * * /home/$USER/paru-autoupdate.sh") | crontab -
 
+# Add configuration to alsa-base.conf
+echo "Configuring alsa-base.conf..."
+echo "options snd-hda-intel model=asus-zenbook" | sudo tee -a /etc/modprobe.d/alsa-base.conf
+echo "Configuration for alsa-base.conf complete!"
+
+
 # Clone dotfiles and copy configurations
 echo "Cloning dotfiles repository..."
 git clone https://github.com/fraugho/dotfiles.git ~/dotfiles
