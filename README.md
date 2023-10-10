@@ -10,10 +10,13 @@ sudo pacman -S git
 git clone https://github.com/fraugho/dotfiles.git
 ```
 ```
-cd dotfiles | chmod +x quiet_install.sh
+cd dotfiles
 ```
 ```
-sudo ./quiet_install.sh
+chmod +x quiet_install.sh
+```
+```
+./quiet_install.sh
 ```
 
 # Quick Install
@@ -25,10 +28,13 @@ sudo pacman -S git
 git clone https://github.com/fraugho/dotfiles.git
 ```
 ```
-cd dotfiles | chmod +x install.sh
+cd dotfiles
 ```
 ```
-sudo ./install.sh
+chmod +x install.sh
+```
+```
+./install.sh
 ```
 
 
