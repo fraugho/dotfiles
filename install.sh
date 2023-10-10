@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Enable parallel downloads in pacman.conf
+echo "Enabling parallel downloads in pacman.conf..."
+sudo sed -i 's/^#ParallelDownloads = 5/ParallelDownloads = 5/' /etc/pacman.conf
+
+echo "Parallel downloads configuration for pacman complete!"
+
 # Update system
 echo "Updating system..."
 sudo pacman -Syu
