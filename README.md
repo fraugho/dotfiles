@@ -7,6 +7,7 @@ paru -Syyu gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-stu
 ```
 
 # Theme
+
 ```
 git https://github.com/vinceliuice/Graphite-gtk-theme
 ```
@@ -24,6 +25,7 @@ cd other/grub2
 ```
 
 # Icons
+
 ```
 git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git
 ```
