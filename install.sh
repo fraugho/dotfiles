@@ -147,11 +147,6 @@ echo "Configuring alsa-base.conf..."
 echo "options snd-hda-intel model=asus-zenbook" | sudo tee -a /etc/modprobe.d/alsa-base.conf
 echo "Configuration for alsa-base.conf complete!"
 
-
-# Clone dotfiles and copy configurations
-echo "Cloning dotfiles repository..."
-git clone https://github.com/fraugho/dotfiles.git ~/dotfiles
-
 echo "Copying configuration files..."
 cp -r ~/dotfiles/i3 ~/.config/
 cp -r ~/dotfiles/polybar ~/.config/
