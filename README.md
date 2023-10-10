@@ -2,6 +2,7 @@
 ![Screenshot](unix-screenshot.png)
 
 # Quick Install
+
 ```
 sudo pacman -S git | git clone https://github.com/fraugho/dotfiles.git | cd dotfiles| chmod +x install.sh | ./install.sh
 ```
