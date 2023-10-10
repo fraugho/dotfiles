@@ -26,7 +26,7 @@ paru -S --noconfirm snap-pac-grub pcmanfm feh
 echo "Installing theme..."
 git clone https://github.com/vinceliuice/Graphite-gtk-theme
 cd Graphite-gtk-theme/
-./install.sh --gdm --tweaks black
+./install.sh --tweaks black --gdm
 cd other/grub2
 ./install.sh
 cd ../../..
