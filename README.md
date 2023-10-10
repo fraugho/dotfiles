@@ -58,6 +58,12 @@ cd src/dmenu-5.2 | patch -p1 < ~/.dmenu/dmenu/dmenu-lineheight-5.2.diff
 sudo make clean install
 ```
 
+# Bluetooth
+
+```
+sudo systemctl start bluetooth | sudo systemctl enable bluetooth
+```
+
 # Steam Flatpak
 
 ```
