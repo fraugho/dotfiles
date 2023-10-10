@@ -69,4 +69,38 @@ echo "Installing Steam flatpak..."
 flatpak install flathub com.valvesoftware.Steam
 sudo ln -s /var/lib/flatpak/exports/bin/com.valvesoftware.Steam /usr/bin/steam-flatpak
 
+# Add g14 repo sign key
+echo "Adding g14 repo sign key..."
+pacman-key --recv-keys 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
+pacman-key --finger 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
+pacman-key --lsign-key 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
+pacman-key --finger 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
+
+# Add g14 repo to pacman.conf
+echo "Adding g14 repo to pacman.conf..."
+echo -e "\n[g14]\nServer = https://arch.asus-linux.org" | sudo tee -a /etc/pacman.conf
+
+# Run a full system update
+echo "Updating system with the new repo..."
+sudo pacman -Suy
+
+# Asusctl installation and setup
+echo "Installing asusctl..."
+sudo pacman -S asusctl
+# Enable power-profiles-daemon
+echo "Enabling power-profiles-daemon.service..."
+sudo systemctl enable --now power-profiles-daemon.service
+
+# Supergfxctl installation and setup
+echo "Installing supergfxctl..."
+sudo pacman -S supergfxctl
+# Enable supergfxd
+echo "Enabling supergfxd service..."
+sudo systemctl enable --now supergfxd
+
+# ROG Control Center installation
+echo "Installing ROG Control Center..."
+sudo pacman -S rog-control-center
+
 echo "Installation complete!"
+
