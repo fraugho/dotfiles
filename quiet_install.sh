@@ -86,7 +86,7 @@ cp -r ~/dotfiles/polybar ~/.config/
 cp -r ~/dotfiles/neofetch ~/.config/
 cp -r ~/dotfiles/qtile ~/.config/
 cp -r ~/dotfiles/Wallpapers ~/
-sudo cp -r ~/dotfiles/dunst /etc/dunst
+sudo cp -r ~/dotfiles/dunst /etc
 sudo cp ~/dotfiles/obquit/obquit.conf /etc/obquit.conf
 
 # Add g14 repo sign key
