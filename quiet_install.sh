@@ -77,10 +77,10 @@ sudo ln -s /var/lib/flatpak/exports/bin/com.valvesoftware.Steam /usr/bin/steam-f
 
 # Add g14 repo sign key
 echo "Adding g14 repo sign key..."
-pacman-key --recv-keys 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
-pacman-key --finger 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
-pacman-key --lsign-key 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
-pacman-key --finger 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
+sudo pacman-key --recv-keys 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
+sudo pacman-key --finger 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
+sudo pacman-key --lsign-key 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
+sudo pacman-key --finger 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
 
 # Add g14 repo to pacman.conf
 echo "Adding g14 repo to pacman.conf..."
