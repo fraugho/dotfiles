@@ -285,7 +285,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 
 # bluetooth
-# exec --no-startup-id blueberry-tray
+#exec --no-startup-id blueberry-tray
 
 # network
 exec --no-startup-id nm-applet
@@ -304,7 +304,7 @@ exec --no-startup-id volumeicon
 exec --no-startup-id rog-control-center
 
 # feh sets wallpaper
-exec --no-startup-id feh --bg-fill /usr/share/backgrounds/archlinux/arch-wallpaper.jpg &
+exec --no-startup-id feh --bg-fill ~/Wallpapers/samuri-modified2.jpg &
 
 # Polybar
  exec_always --no-startup-id ~/.config/polybar/launch.sh &
@@ -539,8 +539,6 @@ mode "$mode_gaps_outer" {
 
 # if you want transparency on non-focused windows, ...
 exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
-
-bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 
 
     # Window color settings
