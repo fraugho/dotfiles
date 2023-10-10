@@ -72,7 +72,7 @@ sudo systemctl enable bluetooth
 
 # Steam Flatpak
 echo "Installing Steam flatpak..."
-flatpak install flathub com.valvesoftware.Steam
+flatpak install -y flathub com.valvesoftware.Steam
 sudo ln -s /var/lib/flatpak/exports/bin/com.valvesoftware.Steam /usr/bin/steam-flatpak
 
 # Add g14 repo sign key
