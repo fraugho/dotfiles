@@ -119,34 +119,8 @@ bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 # start dmenu
 bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#000000' -nf '#FFFFFF' -sb '#FFFFFF' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=12' -h 20
 bindsym $mod+shift+n exec --no-startup-id networkmanager_dmenu -i -nb '#000000' -nf '#FFFFFF' -sb '#FFFFFF' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=12' -h 20
-# start rofi
-bindsym $mod+d exec --no-startup-id ~/.config/i3/launcher/launcher.sh
-
-# start rofi full
-bindsym $mod+F11 exec --no-startup-id "rofi -font 'Noto Sans 13' -theme-str 'window {width: 100%;height: 100%;}' -show drun"
-
-# start rofi small
-bindsym $mod+F12 exec --no-startup-id rofi -show drun -font "Noto Sans 13"
 
 ################# how to exit, logoff, suspend, ...
-
-# Backup exit
-# Press ctrl+alt+x - check toolbar for next choices
-bindsym control+mod1+X mode "$mode_system"
-
-set $mode_system System (k) lock, (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
-mode "$mode_system" {
-    bindsym k exec --no-startup-id ~/.config/i3/scripts/i3exit.sh lock, mode "default"
-    bindsym l exec --no-startup-id ~/.config/i3/scripts/i3exit.sh logout, mode "default"
-    bindsym u exec --no-startup-id ~/.config/i3/scripts/i3exit.sh suspend, mode "default"
-    bindsym h exec --no-startup-id ~/.config/i3/scripts/i3exit.sh hibernate, mode "default"
-    bindsym r exec --no-startup-id ~/.config/i3/scripts/i3exit.sh reboot, mode "default"
-    bindsym s exec --no-startup-id ~/.config/i3/scripts/i3exit.sh shutdown, mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
 
 # Logout
 bindsym $mod+Shift+e exec i3-msg exit
