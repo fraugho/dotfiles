@@ -1,7 +1,14 @@
 # dotfiles
 ![Screenshot](unix-screenshot.png)
 
+# Paru
+
+```
+git clone https://aur.archlinux.org/paru.git | cd paru | makepkg -si
+```
+
 # Dependancies
+
 ```
 paru -Syyu gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-studio-code-bin nitrogen vivaldi vivaldi-ffmpeg-codecs noto-fonts nerd-fonts brightnessctl network-manager-applet file-roller neofetch pavucontrol blueberry lxappearance discord rofi git dmenu abs cron obquit caffeine-ng xautolock zoom flameshot picom-git polybar spotify awesome-git networkmanager-dmenu-git snap-pac-grub
 ```
@@ -49,4 +56,13 @@ cd src/dmenu-5.2 | patch -p1 < ~/.dmenu/dmenu/dmenu-lineheight-5.2.diff
 ```
 ```
 sudo make clean install
+```
+
+# Steam Flatpak
+
+```
+flatpak install flathub com.valvesoftware.Steam
+```
+```
+sudo ln -s /var/lib/flatpak/exports/bin/com.valvesoftware.Steam /usr/bin/steam-flatpak
 ```
