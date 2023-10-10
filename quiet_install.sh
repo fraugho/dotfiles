@@ -21,7 +21,7 @@ rm -rf paru
 # Install dependencies
 echo "Installing dependencies..."
 paru -Syyu --noconfirm grub-btrfs snapper snap-pac snap-pac-grub gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-studio-code-bin nitrogen vivaldi vivaldi-ffmpeg-codecs noto-fonts nerd-fonts brightnessctl network-manager-applet file-roller neofetch pavucontrol blueberry lxappearance discord rofi git dmenu cron obquit caffeine-ng xautolock zoom flameshot picom-git polybar spotify awesome-git networkmanager-dmenu-git obsidian asp
-paru -S --noconfirm snap-pac-grub pcmanfm
+paru -S --noconfirm snap-pac-grub pcmanfm feh
 # Theme
 echo "Installing theme..."
 git clone https://github.com/vinceliuice/Graphite-gtk-theme
