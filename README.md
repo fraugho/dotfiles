@@ -1,6 +1,21 @@
 # dotfiles
 ![Screenshot](unix-screenshot.png)
 
+# Silent Quick Install
+
+```
+sudo pacman -S git
+```
+```
+git clone https://github.com/fraugho/dotfiles.git
+```
+```
+cd dotfiles | chmod +x quiet_install.sh
+```
+```
+sudo ./quiet_install.sh
+```
+
 # Quick Install
 
 ```
@@ -15,6 +30,7 @@ cd dotfiles | chmod +x install.sh
 ```
 sudo ./install.sh
 ```
+
 
 # Paru
 
