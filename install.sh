@@ -136,6 +136,18 @@ echo "Setting up the cron job..."
 # Open the crontab editor and add the job
 (crontab -l 2>/dev/null; echo "0 2 * * * /home/$USER/paru-autoupdate.sh") | crontab -
 
-echo "Setup complete!"
+# Clone dotfiles and copy configurations
+echo "Cloning dotfiles repository..."
+git clone https://github.com/fraugho/dotfiles.git ~/dotfiles
 
+echo "Copying configuration files..."
+cp -r ~/dotfiles/i3 ~/.config/
+cp -r ~/dotfiles/polybar ~/.config/
+cp -r ~/dotfiles/neofetch ~/.config/
+cp -r ~/dotfiles/qtile ~/.config/
+sudo cp -r ~/dotfiles/dunst /etc/dunst
+sudo cp ~/dotfiles/obquit/obquit.conf /etc/obquit.conf
+rm -rf dotfiles
+
+echo "Configuration complete!"
 
