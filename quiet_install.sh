@@ -83,6 +83,9 @@ echo "Configuration for alsa-base.conf complete!"
 echo "Copying configuration files..."
 cp -r ~/dotfiles/i3 ~/.config/
 cp -r ~/dotfiles/polybar ~/.config/
+cd ~/.config/polybar
+chmod +x launch.sh
+cd
 cp -r ~/dotfiles/neofetch ~/.config/
 cp -r ~/dotfiles/qtile ~/.config/
 cp -r ~/dotfiles/Wallpapers ~/
