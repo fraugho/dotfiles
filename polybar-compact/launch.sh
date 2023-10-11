@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Set the primary monitor
+export PRIMARY_MONITOR=$(~/.config/polybar/scripts/get_primary_monitor.sh)
+
 # Terminate already running bar instances
 killall -q polybar
 
