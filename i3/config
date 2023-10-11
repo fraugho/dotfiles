@@ -114,7 +114,6 @@ bindsym $mod+Shift+8 move container to workspace 8; workspace 8
 bindsym $mod+Shift+9 move container to workspace 9; workspace 9
 bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 
-################# menu's in arcolinux
 
 # start dmenu
 bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#000000' -nf '#FFFFFF' -sb '#FFFFFF' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=12' -h 20
@@ -123,12 +122,13 @@ bindsym $mod+shift+n exec --no-startup-id networkmanager_dmenu -i -nb '#000000' 
 ################# how to exit, logoff, suspend, ...
 
 # Logout
-bindsym $mod+Shift+e exec i3-msg exit
+#bindsym $mod+Shift+e exec i3-msg exit
 bindsym $mod+Shift+u exec obquit
 
 # sleep
 exec --no-startup-id caffeine-ng &
-exec_always xautolock -detectsleep -time 10 -locker "systemctl suspend" -corners 0-0- -cornerdelay 5
+exec_always xautolock -detectsleep -time 10 -locker "i3lock -c 000000" -corners 0-0- -cornerdelay 5
+#exec_always xautolock -detectsleep -time 10 -locker "systemctl suspend" -corners 0-0- -cornerdelay 5
 
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -204,7 +204,6 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-# Super + F in arcolinux is execute thunar
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
@@ -350,9 +349,7 @@ bindsym control+mod1+s exec --no-startup-id spotify;focus
 
 ################# screenshots                      
 
-bindsym Control+Shift+Print exec --no-startup-id gnome-screenshot -i
-bindsym $mod+Control+Print exec --no-startup-id flameshot gui
-# bindsym shift+Print exec --no-startup-id shutter
+bindsym Print exec --no-startup-id flameshot gui
 
 ################# floating or tiled rules         
 
