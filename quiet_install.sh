@@ -14,7 +14,7 @@ sudo pacman -Syu --noconfirm
 echo "Installing paru..."
 git clone https://aur.archlinux.org/paru.git
 cd paru
-yes | makepkg -si
+makepkg -si
 cd ..
 rm -rf paru
 
