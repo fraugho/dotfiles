@@ -130,7 +130,7 @@ sudo pacman -S --noconfirm rog-control-center
 echo "Creating the autoupdate script..."
 
 # Use a Here Document to generate the script file
-cat > ~/paru-autoupdate.sh <<EOF
+cat > ~/autoupdate.sh <<EOF
 #!/bin/bash
 
 # Update the system using paru
@@ -144,7 +144,7 @@ flatpak update -y
 EOF
 
 # Make the script executable
-chmod +x ~/paru-autoupdate.sh
+chmod +x ~/autoupdate.sh
 
 # Set up cronie if not already installed
 if ! command -v cronie &> /dev/null; then
@@ -161,7 +161,7 @@ fi
 echo "Setting up the cron job..."
 
 # Open the crontab editor and add the job
-(crontab -l 2>/dev/null; echo "0 2 * * * /home/$USER/paru-autoupdate.sh") | crontab -
+(crontab -l 2>/dev/null; echo "0 2 * * * ~/autoupdate.sh") | crontab -
 
 
 
