@@ -26,7 +26,7 @@ paru -S --noconfirm snap-pac-grub pcmanfm feh picom-git
 echo "Installing theme..."
 git clone https://github.com/vinceliuice/Graphite-gtk-theme.git
 cd Graphite-gtk-theme/
-./install.sh --tweaks black --gdm
+sudo ./install.sh --tweaks black --gdm
 cd other/grub2
 ./install.sh
 cd ../../..
@@ -36,7 +36,7 @@ rm -rf Graphite-gtk-theme
 echo "Installing icons..."
 git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git
 cd WhiteSur-icon-theme/
-./install.sh --theme grey --alternative
+sudo ./install.sh --theme grey --alternative
 cd ..
 rm -rf WhiteSur-icon-theme
 
