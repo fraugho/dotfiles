@@ -30,7 +30,7 @@ sudo ./install.sh --tweaks black --gdm
 cd other/grub2
 ./install.sh
 cd ../../..
-rm -rf Graphite-gtk-theme
+#rm -rf Graphite-gtk-theme
 
 # Icons
 echo "Installing icons..."
