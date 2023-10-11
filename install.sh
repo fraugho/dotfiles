@@ -156,6 +156,8 @@ cp -r ~/dotfiles/Wallpapers ~/
 sudo cp -r ~/dotfiles/dunst /etc/dunst
 sudo cp ~/dotfiles/obquit/obquit.conf /etc/obquit.conf
 
+echo "enabling polybar"
+chmod +x ~/.config/polybar/launch.sh
 
 echo "Configuration complete!"
 rm -rf ~/dotfiles
