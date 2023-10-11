@@ -2,7 +2,7 @@
 set $mod Mod4
 
 ###---Styling---###
-font xft:Source Code Pro Medium 10
+font pango:Noto Mono Regular 13
 
 # Window color settings
     
