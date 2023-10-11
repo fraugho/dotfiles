@@ -138,6 +138,9 @@ paru -Syu --noconfirm
 
 # Optional: Clean up old versions of installed packages to save space
 paru -Scc --noconfirm
+
+# Update flatpaks
+flatpak update -y
 EOF
 
 # Make the script executable
