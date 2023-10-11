@@ -88,6 +88,8 @@ cp -r ~/dotfiles/i3 ~/.config/
 cp -r ~/dotfiles/polybar ~/.config/
 cd ~/.config/polybar
 chmod +x launch.sh
+cd ~/.config/polybar/scripts
+chmod +x get_primary_monitor.sh
 cd
 cp -r ~/dotfiles/neofetch ~/.config/
 cp -r ~/dotfiles/qtile ~/.config/
