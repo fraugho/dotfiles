@@ -2,9 +2,6 @@
 ; Main Polybar Configuration
 ;=====================================================
 
-; Include global settings
-include-file = ~/.config/polybar/global-settings.conf
-
 ; Include configurations for different window managers
 ; Uncomment the lines for the window managers you use
 
