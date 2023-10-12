@@ -147,7 +147,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xrdb ~/.Xresources
 
 # Compositor
-exec --no-startup-id picom -b
+#exec --no-startup-id picom -b
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # feh sets wallpaper
 exec --no-startup-id feh --bg-fill ~/Wallpapers/samuri-modified2.jpg &
@@ -200,5 +201,5 @@ bindsym $mod+Shift+Return exec pcmanfm
 bindsym $mod+Mod1+c exec code
 bindsym $mod+Mod1+p exec st -e htop
 bindsym $mod+Mod1+i exec gnome-boxes
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty;focus
 bindsym $mod+Mod1+v exec st -e nvim
