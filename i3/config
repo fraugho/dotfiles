@@ -15,8 +15,11 @@ font pango:Noto Mono Regular 13
 
     client.background       #242424
 
-#gets rid of bar of name of window
+# No border for all windows
 for_window [class=".*"] border pixel 0
+
+# 2-pixel border specifically for Alacritty
+for_window [class="Alacritty"] border pixel 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
