@@ -12,6 +12,8 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Detect the current window manager and launch the appropriate Polybar configuration
 if pgrep -x "i3" >/dev/null; then
     polybar mainbar-i3 &
+elif pgrep -x "sway" >/dev/null; then
+    polybar mainbar-sway &
 elif pgrep -x "openbox" >/dev/null; then
     polybar mainbar-openbox &
 elif pgrep -x "bspwm" >/dev/null; then
