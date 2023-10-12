@@ -135,7 +135,8 @@ sudo pacman -S --noconfirm rog-control-center
 echo "Creating the autoupdate script..."
 
 # Use a Here Document to generate the script file
-cat > ~/autoupdate.sh <<EOF
+mkdir ~/.scripts
+cat > ~/.scripts/autoupdate.sh <<EOF
 #!/bin/bash
 
 # Update the system using paru
@@ -149,7 +150,7 @@ flatpak update -y
 EOF
 
 # Make the script executable
-chmod +x ~/autoupdate.sh
+chmod +x ~/.scripts/autoupdate.sh 
 
 # Set up cronie if not already installed
 if ! command -v cronie &> /dev/null; then
@@ -166,9 +167,7 @@ fi
 echo "Setting up the cron job..."
 
 # Open the crontab editor and add the job
-(crontab -l 2>/dev/null; echo "0 2 * * * ~/autoupdate.sh") | crontab -
-
-
+(crontab -l 2>/dev/null; echo "0 2 * * * ~/.scripts/autoupdate.sh ") | crontab -
 
 echo "Configuration complete!"
 rm -rf ~/dotfiles
