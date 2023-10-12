@@ -86,14 +86,15 @@ echo "Configuration for alsa-base.conf complete!"
 echo "Copying configuration files..."
 cp -r ~/dotfiles/i3 ~/.config/
 cp -r ~/dotfiles/polybar ~/.config/
+cp -r ~/dotfiles/neofetch ~/.config/
+cp -r ~/dotfiles/qtile ~/.config/
+cp -r ~/dotfiles/picom ~/.config
+cp -r ~/dotfiles/Wallpapers ~/
 cd ~/.config/polybar
 chmod +x launch.sh
 cd ~/.config/polybar/scripts
 chmod +x get_primary_monitor.sh
 cd
-cp -r ~/dotfiles/neofetch ~/.config/
-cp -r ~/dotfiles/qtile ~/.config/
-cp -r ~/dotfiles/Wallpapers ~/
 sudo cp -r ~/dotfiles/dunst /etc
 sudo cp ~/dotfiles/obquit/obquit.conf /etc/obquit.conf
 
