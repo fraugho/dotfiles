@@ -28,7 +28,7 @@ echo "Installing theme..."
 git clone https://github.com/vinceliuice/Graphite-gtk-theme.git
 cd Graphite-gtk-theme/
 sudo ./install.sh --tweaks black --gdm
-./install.sh --tweaks black --gdm
+./install.sh --tweaks black
 cd other/grub2
 ./install.sh
 cd ../../..
