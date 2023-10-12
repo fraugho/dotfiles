@@ -182,7 +182,10 @@ bindsym $mod+Shift+u exec obquit
 
 # sleep
 exec --no-startup-id caffeine start&
-exec_always xautolock -detectsleep -time 10 -locker "swaylock -c 000000" -corners 0-0- -cornerdelay 5
+exec swayidle -w \
+    timeout 600 'swaylock -c 000000' \
+    resume 'command_to_resume' \
+    before-sleep 'swaylock -c 000000'
 
 ###---Go To Location Open Terminal---###
 bindsym $mod+g exec openterminalin
