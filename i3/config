@@ -17,9 +17,7 @@ font pango:Noto Mono Regular 13
 
 # No border for all windows
 for_window [class=".*"] border pixel 0
-
-# 2-pixel border specifically for Alacritty
-for_window [class="Alacritty"] border pixel 1
+hide_edge_borders both
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
