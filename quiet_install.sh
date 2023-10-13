@@ -2,7 +2,7 @@
 
 # Enable parallel downloads in pacman.conf
 echo "Enabling parallel downloads in pacman.conf..."
-sudo sed -i 's/^#ParallelDownloads = 5/ParallelDownloads = 5/' /etc/pacman.conf
+sudo sed -i 's/^#ParallelDownloads = 5/ParallelDownloads = 10/' /etc/pacman.conf
 
 echo "Parallel downloads configuration for pacman complete!"
 
@@ -21,7 +21,7 @@ rm -rf paru
 # Install dependencies
 echo "Installing dependencies..."
 paru -Syyu --noconfirm grub-btrfs snapper flameshot protonvpn snap-pac snap-pac-grub gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-studio-code-bin nitrogen vivaldi vivaldi-ffmpeg-codecs noto-fonts nerd-fonts brightnessctl network-manager-applet file-roller neofetch pavucontrol blueberry lxappearance-gtk3 discord rofi git dmenu cronie obquit caffeine-ng xautolock zoom flameshot picom-git polybar spotify awesome-git networkmanager-dmenu-git obsidian obquit asp
-paru -S --noconfirm snap-pac-grub pcmanfm feh picom-git jellyfin-media-player ttf-font-awesome light sway swaylock swayidle
+paru -S --noconfirm snap-pac-grub pcmanfm feh picom-git jellyfin-media-player ttf-font-awesome light gparted stacer
 
 # Theme
 echo "Installing theme..."
@@ -67,7 +67,6 @@ echo "Installing Doom Emacs..."
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 ~/.config/emacs/bin/doom install
 
-
 # Bluetooth
 echo "Enabling bluetooth..."
 sudo systemctl start bluetooth
@@ -76,7 +75,12 @@ sudo systemctl enable bluetooth
 # Steam Flatpak
 echo "Installing Steam flatpak..."
 flatpak install -y flathub com.valvesoftware.Steam
-sudo ln -s /var/lib/flatpak/exports/bin/com.valvesoftware.Steam /usr/bin/steam-flatpak
+sudo ln -s /var/lib/flatpak/exports/bin/com.valvesoftware.Steam /usr/bin/steam
+
+# Librewolf Flatkpak
+echo "Installing Steam flatpak..."
+flatpak install -y flathub io.gitlab.librewolf-community
+sudo ln -s /var/lib/flatpak/exports/bin/io.gitlab.librewolf-community /usr/bin/librewolf
 
 # Add configuration to alsa-base.conf
 echo "Configuring alsa-base.conf..."
