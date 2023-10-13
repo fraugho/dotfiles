@@ -21,7 +21,7 @@ rm -rf paru
 # Install dependencies
 echo "Installing dependencies..."
 paru -Syyu --noconfirm grub-btrfs snapper flameshot protonvpn snap-pac snap-pac-grub gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-studio-code-bin nitrogen vivaldi vivaldi-ffmpeg-codecs noto-fonts nerd-fonts brightnessctl network-manager-applet file-roller neofetch pavucontrol blueberry lxappearance-gtk3 discord rofi git dmenu cronie obquit caffeine-ng xautolock zoom flameshot picom-git polybar spotify awesome-git networkmanager-dmenu-git obsidian obquit asp
-paru -S --noconfirm snap-pac-grub pcmanfm feh picom-git jellyfin-media-player ttf-font-awesome light gparted stacer
+paru -S --noconfirm snap-pac-grub pcmanfm feh picom-git jellyfin-media-player ttf-font-awesome light gparted stacer gnome-boxes
 
 # Theme
 echo "Installing theme..."
@@ -65,7 +65,7 @@ rm -rf ~/.dmenu
 # Doom Emacs
 echo "Installing Doom Emacs..."
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
-~/.config/emacs/bin/doom install
+yes | ~/.config/emacs/bin/doom install
 
 # Bluetooth
 echo "Enabling bluetooth..."
