@@ -178,8 +178,12 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym $mod+x exec multimonitor
 
 ###---Brightness---###
-bindsym XF86MonBrightnessUp exec light -A 5 # Increase brightness by 5%
-bindsym XF86MonBrightnessDown exec light -U 5 # Decrease brightness by 5%
+#bindsym F8 exec light -A 5 # Increase brightness by 5%
+#bindsym F7 exec light -U 5 # Decrease brightness by 5%
+bindsym F7 exec brightnessctl set 5%- # Decrease brightness by 5%
+bindsym F8 exec brightnessctl set +5% # Increase brightness by 5%
+
+
 
 # Logout
 bindsym $mod+Shift+u exec obquit
@@ -195,7 +199,7 @@ bindsym $mod+g exec openterminalin
 bindsym Print exec --no-startup-id flameshot gui
 
 ###---Toggle touchpad---###
-bindsym F7 exec toggleTouch
+bindsym F10 exec toggleTouch
 
 ###---Launch programs---###
 bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#000000' -nf '#FFFFFF' -sb '#FFFFFF' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=12' -h 20
