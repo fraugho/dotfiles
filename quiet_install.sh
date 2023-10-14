@@ -77,6 +77,10 @@ echo "Installing Steam flatpak..."
 flatpak install -y flathub com.valvesoftware.Steam
 sudo ln -s /var/lib/flatpak/exports/bin/com.valvesoftware.Steam /usr/bin/steam
 
+# Proton-GE Flatpak
+echo "Installing Proton-GE flatpak"
+flatpak install -y com.valvesoftware.Steam.CompatibilityTool.Proton-GE
+
 # Librewolf Flatkpak
 echo "Installing Steam flatpak..."
 flatpak install -y flathub io.gitlab.librewolf-community
