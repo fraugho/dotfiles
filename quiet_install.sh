@@ -94,13 +94,13 @@ cp -r ~/dotfiles/neofetch ~/.config/
 cp -r ~/dotfiles/qtile ~/.config/
 cp -r ~/dotfiles/picom ~/.config
 cp -r ~/dotfiles/Wallpapers ~/
-cd ~/.config/polybar
-chmod +x launch.sh
-cd ~/.config/polybar/scripts
-chmod +x get_primary_monitor.sh
-cd
 sudo cp -r ~/dotfiles/dunst /etc
 sudo cp ~/dotfiles/obquit/obquit.conf /etc/obquit.conf
+cd ~/.config/polybar
+chmod +x launch.sh
+chmod +x  ~/.config/polybar/scripts/get_primary_monitor.sh
+chmod +x ~/.config/polybar/scripts/date_suffix.sh
+
 
 # Add g14 repo sign key
 echo "Adding g14 repo sign key..."
