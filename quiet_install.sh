@@ -98,7 +98,6 @@ cp -r ~/dotfiles/neofetch ~/.config/
 cp -r ~/dotfiles/qtile ~/.config/
 cp -r ~/dotfiles/picom ~/.config
 cp -r ~/dotfiles/Wallpapers ~/
-cp -r ~/dotfiles/scripts ~/
 sudo cp -r ~/dotfiles/dunst /etc
 sudo cp ~/dotfiles/obquit/obquit.conf /etc/obquit.conf
 cd ~/.config/polybar
