@@ -20,7 +20,7 @@ rm -rf paru
 
 # Install dependencies
 echo "Installing dependencies..."
-paru -Syyu --noconfirm grub-btrfs snapper flameshot protonvpn snap-pac snap-pac-grub gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-studio-code-bin nitrogen vivaldi vivaldi-ffmpeg-codecs noto-fonts nerd-fonts brightnessctl network-manager-applet file-roller neofetch pavucontrol blueberry lxappearance-gtk3 discord rofi git dmenu cronie obquit caffeine-ng xautolock zoom flameshot picom-git polybar spotify awesome-git networkmanager-dmenu-git obsidian obquit-git asp
+paru -Syyu --noconfirm grub-btrfs snapper flameshot protonvpn snap-pac snap-pac-grub gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-studio-code-bin nitrogen vivaldi vivaldi-ffmpeg-codecs noto-fonts nerd-fonts brightnessctl network-manager-applet file-roller neofetch pavucontrol blueberry lxappearance-gtk3 discord rofi git dmenu cronie obquit caffeine-ng xautolock zoom flameshot picom-git polybar awesome-git networkmanager-dmenu-git obsidian obquit-git asp
 paru -S --noconfirm snap-pac-grub pcmanfm feh picom-git jellyfin-media-player ttf-font-awesome light gparted stacer gnome-boxes onlyoffice-bin rust-analyzer visual-studio-code-bin
 
 # Theme
@@ -73,18 +73,23 @@ sudo systemctl start bluetooth
 sudo systemctl enable bluetooth
 
 # Steam Flatpak
-echo "Installing Steam flatpak..."
+echo "Installing Steam Flatpak..."
 flatpak install -y flathub com.valvesoftware.Steam
 sudo ln -s /var/lib/flatpak/exports/bin/com.valvesoftware.Steam /usr/bin/steam
 
 # Proton-GE Flatpak
-echo "Installing Proton-GE flatpak"
+echo "Installing Proton-GE Flatpak"
 flatpak install -y com.valvesoftware.Steam.CompatibilityTool.Proton-GE
 
 # Librewolf Flatkpak
-echo "Installing Steam flatpak..."
+echo "Installing Librewolf Flatpak..."
 flatpak install -y flathub io.gitlab.librewolf-community
 sudo ln -s /var/lib/flatpak/exports/bin/io.gitlab.librewolf-community /usr/bin/librewolf
+
+# Spotify Flatpak
+echo "Installing Spotify Flatpak..."
+flatpak install -y flathub com.spotify.Client
+sudo ln -s /var/lib/flatpak/exports/bin/com.spotify.Client /usr/bin/spotify
 
 # Add configuration to alsa-base.conf
 echo "Configuring alsa-base.conf..."
