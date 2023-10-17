@@ -1,0 +1,108 @@
+# sxhkd configuration file
+
+# Set mod key (assuming it's the super key, usually Mod4)
+super + shift + q
+	bspc node -c
+
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+# Fullscreen mode toggle
+super + f
+	bspc node -t fullscreen
+
+# Autotiling is a script/functionality that you'll need to handle outside of sxhkd.
+
+# Moving focused window
+super + shift + {h,j,k,l}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Sending window to another workspace and following it
+super + control + {1-9,0}
+	bspc node -d '^{1-9,10}' -f
+
+# Reloading and restarting bspwm (similar to i3 reload and restart)
+super + shift + {c,r}
+	bspc wm -r
+
+# Resize mode (Adjust as per your preference, example provided)
+super + r
+	# Your resizing commands here. You'll need to script this part.
+
+# Various system commands (These commands need to be available in your system)
+super + shift + u
+	obquit
+
+# Example of command execution
+super + g
+	openterminalin
+
+# Adjust volume (requires pactl or amixer)
+XF86AudioRaiseVolume
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
+XF86AudioLowerVolume
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Brightness adjustment (requires brightnessctl or xbacklight)
+F7
+	brightnessctl set 5%- # Decrease brightness by 5%
+F8
+	brightnessctl set +5% # Increase brightness by 5%
+
+# Screenshot tool
+Print
+	flameshot gui
+
+# Launching dmenu (requires dmenu installed)
+super + shift + d
+	dmenu_run -i -nb '#000000' -nf '#FFFFFF' -sb '#FFFFFF' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=12' -h 20
+
+# Launching various applications (they need to be installed on your system)
+super + Return
+	alacritty
+
+# When you press super + alt + a, the system will launch pavucontrol
+super + mod1 + a
+	pavucontrol
+
+# When you press super + alt + s, the system will launch spotify
+super + mod1 + s
+	spotify
+
+# When you press super + alt + d, the system will launch discord
+super + mod1 + d
+	discord
+
+# When you press super + alt + k, the system will launch kdenlive
+super + mod1 + k
+	kdenlive
+
+# When you press super + alt + o, the system will launch obs
+super + mod1 + o
+	obs
+
+# When you press super + alt + g, the system will launch gimp
+super + mod1 + g
+	gimp
+
+# When you press super + alt + b, the system will launch vivaldi-stable
+super + mod1 + b
+	vivaldi-stable
+
+# When you press super + alt + c, the system will launch Visual Studio Code
+super + mod1 + c
+	code
+
+# When you press super + alt + p, the system will execute htop in the simple terminal (st)
+super + mod1 + p
+	st -e htop
+
+# When you press super + alt + i, the system will launch gnome-boxes
+super + mod1 + i
+	gnome-boxes
+
+# When you press super + alt + v, the system will execute nvim in the simple terminal (st)
+super + mod1 + v
+	st -e nvim
