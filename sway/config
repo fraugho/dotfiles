@@ -2,7 +2,7 @@
 set $mod Mod4
 
 ###---Styling---###
-font pango:Noto Mono Regular 13
+font pango:Noto Mono Regular 0
 
 # Window color settings
     
@@ -20,6 +20,10 @@ for_window [class=".*"] border pixel 0
 
 # 2-pixel border specifically for Alacritty
 for_window [class="Alacritty"] border pixel 1
+
+# Layout
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+i layout toggle split
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
