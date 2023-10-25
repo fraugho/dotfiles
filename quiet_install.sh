@@ -81,6 +81,11 @@ sudo ln -s /var/lib/flatpak/exports/bin/com.valvesoftware.Steam /usr/bin/steam
 echo "Installing Proton-GE Flatpak"
 flatpak install -y com.valvesoftware.Steam.CompatibilityTool.Proton-GE
 
+# Firefox Flatpak
+echo "Installing Firefox Flatpak..."
+flatpak install -y flathub org.mozilla.firefox
+sudo ln -s /var/lib/flatpak/exports/bin/org.mozilla.firefox /usr/bin/firefox
+
 # Librewolf Flatkpak
 echo "Installing Librewolf Flatpak..."
 flatpak install -y flathub io.gitlab.librewolf-community
@@ -93,11 +98,11 @@ sudo ln -s /var/lib/flatpak/exports/bin/com.spotify.Client /usr/bin/spotify
 
 # Nvidia Driver Flatpak
 echo "Instlling Nvidia Driver Flatpak..."
-flatpak install flathub org.freedesktop.Platform.GL.nvidia-535-113-01
+flatpak install -y flathub org.freedesktop.Platform.GL.nvidia-535-113-01
 
 # Flatseal Flatpak
 echo "Installing Flatseal..."
-flatpak install flathub com.github.tchx84.Flatseal
+flatpak install -y flathub com.github.tchx84.Flatseal
 sudo ln -s /var/lib/flatpak/exports/bin/com.github.tchx84.Flatseal /usr/bin/flatseal
 
 # Add configuration to alsa-base.conf
