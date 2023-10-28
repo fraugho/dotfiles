@@ -91,6 +91,11 @@ echo "Installing Librewolf Flatpak..."
 flatpak install -y flathub io.gitlab.librewolf-community
 sudo ln -s /var/lib/flatpak/exports/bin/io.gitlab.librewolf-community /usr/bin/librewolf
 
+# Logism Flatpak
+echo "Installing Logisim Flatpak..."
+flatpak install -y flathub com.github.reds.LogisimEvolution
+sudo ln -s /var/lib/flatpak/exports/bin/com.github.reds.LogisimEvolution /usr/bin/logisim
+
 # Spotify Flatpak
 echo "Installing Spotify Flatpak..."
 flatpak install -y flathub com.spotify.Client
