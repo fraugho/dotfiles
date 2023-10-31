@@ -21,7 +21,7 @@ rm -rf paru
 # Install dependencies
 echo "Installing dependencies..."
 paru -Syyu --noconfirm grub-btrfs snapper flameshot protonvpn snap-pac snap-pac-grub gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-studio-code-bin nitrogen vivaldi vivaldi-ffmpeg-codecs noto-fonts nerd-fonts brightnessctl network-manager-applet file-roller neofetch pavucontrol blueberry lxappearance-gtk3 discord rofi git dmenu cronie obquit caffeine-ng xautolock zoom flameshot picom-git polybar awesome-git networkmanager-dmenu-git obsidian obquit-git asp
-paru -Syyu --noconfirm snap-pac-grub pcmanfm feh picom-git jellyfin-media-player ttf-font-awesome light gparted stacer gnome-boxes onlyoffice-bin rust-analyzer visual-studio-code-bin zoom linux-zen-headers nvidia-utils nvidia-dkms
+paru -Syyu --noconfirm snap-pac-grub pcmanfm feh picom-git jellyfin-media-player ttf-font-awesome light gparted stacer gnome-boxes onlyoffice-bin rust-analyzer visual-studio-code-bin zoom linux-zen-headers nvidia-utils nvidia-dkms 
 
 # Theme
 echo "Installing theme..."
@@ -90,6 +90,11 @@ sudo ln -s /var/lib/flatpak/exports/bin/org.mozilla.firefox /usr/bin/firefox
 echo "Installing Librewolf Flatpak..."
 flatpak install -y flathub io.gitlab.librewolf-community
 sudo ln -s /var/lib/flatpak/exports/bin/io.gitlab.librewolf-community /usr/bin/librewolf
+
+# Tor Browser Flatpak
+echo "Installing Tor BRowser Flatpak..."
+flatpak install -y flathub com.github.micahflee.torbrowser-launcher
+sudo ln -s /var/lib/flatpak/exports/bin/com.github.micahflee.torbrowser-launcher /usr/bin/tor-browser
 
 # Logism Flatpak
 echo "Installing Logisim Flatpak..."
