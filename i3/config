@@ -2,7 +2,7 @@
 set $mod Mod4
 
 ###---Styling---###
-font pango:Noto Mono Regular 13
+font pango:Noto Mono Regular 15
 
 # Window color settings
     
@@ -24,11 +24,20 @@ client.focused_inactive #222222 #222222 #222222 #222222
 client.placeholder      #222222 #222222 #222222 #222222
 client.urgent           #d42121 #d42121 #d42121 #d42121
 
-
+#Workspace Lock
+for_window [class="^.*"] urgent disable
+assign [class="Vivaldi"] 1
+assign [class="code"] 2
+assign [class="Spotify"] 4
+assign [class="steam"] 5
+assign [class="Jellyfinmediaplayer"] 10
+assign [class="Blueberry"] 9
+assign [class="rog-control-center"] 9
 
 # No border for all windows
 for_window [class=".*"] border pixel 2
 hide_edge_borders both
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -155,6 +164,14 @@ bindsym $mod+r mode "resize"
 
 ###---Start external scripts---###
 
+#Setup Startup
+exec --no-startup-id i3-msg 'workspace 1; exec vivaldi'
+exec --no-startup-id i3-msg 'workspace 2; exec code'
+exec --no-startup-id i3-msg 'workspace 3; exec pcmanfm'
+exec --no-startup-id i3-msg 'workspace 4; exec spotify'
+exec --no-startup-id i3-msg 'workspace 5; exec steam'
+exec --no-startup-id i3-msg 'workspace 10; exec jellyfinmediaplayer'
+
 #Wifi Applet
 exec --no-startup-id nm-applet
 
@@ -178,7 +195,7 @@ exec --no-startup-id feh --bg-fill ~/Wallpapers/samuri-modified2.jpg &
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 ###---Cursor speed---###
-#exec --no-startup-id xinput set-prop 11 295 1.9
+#exec_always --no-startup-id xinput set-prop 21 295 1.9
 
 ###---Audio controls---###
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% # Increase volume
