@@ -81,6 +81,17 @@ sudo ln -s /var/lib/flatpak/exports/bin/com.valvesoftware.Steam /usr/bin/steam
 echo "Installing Proton-GE Flatpak"
 flatpak install -y com.valvesoftware.Steam.CompatibilityTool.Proton-GE
 
+# Vivaldi Flatpak
+echo "Installing Vivaldi Flatpak"
+flatpak install -y flathub com.vivaldi.Vivaldi
+sudo ln -s /var/lib/flatpak/exports/bin/com.vivaldi.Vivaldi /usr/local/bin/vivaldi-flatpak
+
+# OBS Flatpak
+echo "Installing OBS Flatpak"
+flatpak install -y flathub com.obsproject.Studio
+sudo flatpak override --device=all com.obsproject.Studio
+sudo ln -s /var/lib/flatpak/exports/bin/com.obsproject.Studio /usr/local/bin/obs
+
 # Firefox Flatpak
 echo "Installing Firefox Flatpak..."
 flatpak install -y flathub org.mozilla.firefox
