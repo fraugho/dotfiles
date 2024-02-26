@@ -102,8 +102,13 @@ echo "Installing Librewolf Flatpak..."
 flatpak install -y flathub io.gitlab.librewolf-community
 sudo ln -s /var/lib/flatpak/exports/bin/io.gitlab.librewolf-community /usr/bin/librewolf
 
+# OnlyOffice Flatpak
+echo "Installing OnlyOffice Flatpak"
+flatpak install -y flathub org.onlyoffice.desktopeditors
+sudo ln -s /var/lib/flatpak/exports/bin/org.onlyoffice.desktopeditors /usr/bin/only-office
+
 # Tor Browser Flatpak
-echo "Installing Tor BRowser Flatpak..."
+echo "Installing Tor Browser Flatpak..."
 flatpak install -y flathub com.github.micahflee.torbrowser-launcher
 sudo ln -s /var/lib/flatpak/exports/bin/com.github.micahflee.torbrowser-launcher /usr/bin/tor-browser
 
