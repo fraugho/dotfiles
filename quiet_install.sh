@@ -20,7 +20,7 @@ rm -rf paru
 
 # Install dependencies
 echo "Installing dependencies..."
-paru -Syyu --noconfirm vial-appimage zsh flameshot leafpad gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-studio-code-bin nitrogen noto-fonts nerd-fonts brightnessctl network-manager-applet file-roller neofetch pavucontrol blueberry lxappearance-gtk3 discord rofi git dmenu obquit caffeine-ng xautolock zoom flameshot picom-git polybar awesome-git networkmanager-dmenu-git obsidian obquit-git asp
+paru -Syyu --noconfirm vial-appimage zsh flameshot go elixir docker docker-compose leafpad gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-studio-code-bin nitrogen noto-fonts nerd-fonts brightnessctl network-manager-applet file-roller neofetch pavucontrol blueberry lxappearance-gtk3 discord rofi git dmenu obquit caffeine-ng xautolock zoom flameshot picom-git polybar awesome-git networkmanager-dmenu-git obsidian obquit-git asp
 paru -Syyu --noconfirm neovim grub pcmanfm feh picom-git jellyfin-media-player ttf-font-awesome light gparted stacer gnome-boxes onlyoffice-bin rust-analyzer visual-studio-code-bin zoom linux-zen-headers nvidia-utils nvidia-dkms 
 
 # Theme
