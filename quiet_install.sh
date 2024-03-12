@@ -20,7 +20,7 @@ rm -rf paru
 
 # Install dependencies
 echo "Installing dependencies..."
-paru -Syyu --noconfirm vial-appimage grub-btrfs snapper flameshot protonvpn snap-pac snap-pac-grub gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-studio-code-bin nitrogen vivaldi vivaldi-ffmpeg-codecs noto-fonts nerd-fonts brightnessctl network-manager-applet file-roller neofetch pavucontrol blueberry lxappearance-gtk3 discord rofi git dmenu cronie obquit caffeine-ng xautolock zoom flameshot picom-git polybar awesome-git networkmanager-dmenu-git obsidian obquit-git asp
+paru -Syyu --noconfirm vial-appimage flameshot protonvpn gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-studio-code-bin nitrogen noto-fonts nerd-fonts brightnessctl network-manager-applet file-roller neofetch pavucontrol blueberry lxappearance-gtk3 discord rofi git dmenu obquit caffeine-ng xautolock zoom flameshot picom-git polybar awesome-git networkmanager-dmenu-git obsidian obquit-git asp
 paru -Syyu --noconfirm nvim-packer-git neovim snap-pac-grub pcmanfm feh picom-git jellyfin-media-player ttf-font-awesome light gparted stacer gnome-boxes onlyoffice-bin rust-analyzer visual-studio-code-bin zoom linux-zen-headers nvidia-utils nvidia-dkms 
 
 # Theme
@@ -42,30 +42,19 @@ sudo ./install.sh --theme grey --alternative
 cd ..
 rm -rf WhiteSur-icon-theme
 
-# Snapshots
-echo "Configuring snapshots..."
-sudo snapper -c root create-config /
-sudo systemctl enable snapper-timeline.timer snapper-cleanup.timer
-sudo systemctl start snapper-timeline.timer snapper-cleanup.timer
-
 # Dmenu Patch
 echo "Applying dmenu patch..."
 mkdir ~/.dmenu
 cd ~/.dmenu
-paru -G dmenu
+paru -G dmenu-git
 cd dmenu
 wget http://tools.suckless.org/dmenu/patches/line-height/dmenu-lineheight-5.2.diff
 makepkg -o
-cd src/dmenu-5.2
-patch -p1 < ~/.dmenu/dmenu/dmenu-lineheight-5.2.diff
+cd src/dmenu
+patch -p1 < ~/.dmenu/dmenu-git/dmenu-lineheight-5.2.diff
 sudo make clean install
 cd
 rm -rf ~/.dmenu
-
-# Doom Emacs
-echo "Installing Doom Emacs..."
-git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
-yes | ~/.config/emacs/bin/doom install
 
 # Bluetooth
 echo "Enabling bluetooth..."
@@ -201,26 +190,6 @@ paru -Scc --noconfirm
 # Update flatpaks
 flatpak update -y
 EOF
-
-# Make the script executable
-chmod +x ~/.scripts/autoupdate.sh 
-
-# Set up cronie if not already installed
-if ! command -v cronie &> /dev/null; then
-    echo "Installing cronie..."
-    sudo pacman -S --noconfirm cronie
-
-    # Start and enable the cronie service
-    echo "Starting and enabling cronie service..."
-    sudo systemctl start cronie
-    sudo systemctl enable cronie
-fi
-
-# Add a cron job to run the script
-echo "Setting up the cron job..."
-
-# Open the crontab editor and add the job
-(crontab -l 2>/dev/null; echo "0 2 * * * ~/.scripts/autoupdate.sh ") | crontab -
 
 echo "Configuration complete!"
 rm -rf ~/dotfiles
