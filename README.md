@@ -29,7 +29,7 @@ git clone https://aur.archlinux.org/paru.git | cd paru | makepkg -si
 # Theme
 
 ```
-git https://github.com/vinceliuice/Graphite-gtk-theme
+git clone https://github.com/vinceliuice/Graphite-gtk-theme
 ```
 ```
 cd Graphite-gtk-theme/ | ./install.sh --gdm --tweaks black
