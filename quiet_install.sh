@@ -20,7 +20,7 @@ rm -rf paru
 
 # Install dependencies
 echo "Installing dependencies..."
-paru -Syyu --noconfirm zsh xclip fish tmux tmux-plugin-manager flameshot npm go elixir docker docker-compose leafpad gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-studio-code-bin nitrogen noto-fonts nerd-fonts brightnessctl network-manager-applet file-roller neofetch pavucontrol blueberry lxappearance-gtk3 discord git dmenu obquit caffeine-ng xautolock zoom flameshot picom-git polybar networkmanager-dmenu-git obquit-git asp
+paru -Syyu --noconfirm zsh xclip fish tmux tmux-plugin-manager flameshot npm go elixir docker docker-compose leafpad gnome-themes-extra gtk-engine-murrine emacs fd ripgrep vim visual-studio-code-bin nitrogen noto-fonts nerd-fonts brightnessctl network-manager-applet file-roller neofetch pavucontrol blueberry lxappearance-gtk3 discord git obquit caffeine-ng xautolock zoom flameshot picom-git polybar networkmanager-dmenu-git obquit-git asp
 paru -Syyu --noconfirm neovim pcmanfm neovim leafpad flatpak feh picom-git clang git rpi-imager jellyfin-media-player ttf-font-awesome waybar swaylock swayidle i3exit light gparted stacer gnome-boxes onlyoffice-bin rust-analyzer rustup visual-studio-code-bin zoom linux-zen-headers nvidia-utils nvidia-dkms 
 
 #tmux
